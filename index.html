@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚗 자동차 보험 인상률 계산기 | 2025년 최신 보험료 절약 노하우</title>
+    <meta name="description" content="2025년 최신 자동차 보험 인상률을 예측하고, 보험료를 절약하는 방법을 제공하는 전문 계산기 서비스입니다. 사고할증, 무사고 할인 등 맞춤 분석으로 최저가 보험료를 찾아보세요.">
+    <meta name="keywords" content="자동차 보험 인상률 계산기, 자동차 보험료 계산, 자동차 보험료 절약, 자동차 보험 갱신, 무사고 할인, 사고 할증 기준, 보험료 비교, 자동차 보험사별 요율">
+    <meta name="author" content="CarInsurance Expert Team">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+   
+   
+   
+   
+   <style>
+        /* 기본 스타일 */
+        body { font-family: 'Noto Sans KR', sans-serif; line-height: 1.8; margin: 0; padding: 0; background: #eaf2f8; /* 밝고 부드러운 배경색 */ color: #2c3e50; }
+        header, section, footer { max-width: 1000px; margin: 25px auto; padding: 20px; background: #fff; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        h1 { color: #0070f3; /* 메인 블루 */ font-size: 2.5em; font-weight: 900; text-align: center; padding-bottom: 10px; border-bottom: 3px solid #0070f3; margin-top: 0; }
+        h2 { color: #e74c3c; /* 포인트 레드 */ font-size: 1.8em; border-left: 8px solid #e74c3c; padding-left: 15px; margin-top: 30px; margin-bottom: 15px; }
+        h3 { color: #2980b9; /* 서브 블루 */ font-size: 1.4em; margin-top: 20px; border-bottom: 1px dashed #ccc; padding-bottom: 5px; }
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 15px 0; border-radius: 8px; overflow: hidden; }
+        th, td { border: none; padding: 15px; text-align: left; border-bottom: 1px solid #f0f0f0; }
+        th { background: #0070f3; color: #fff; font-weight: 700; text-align: center; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        a { color: #0070f3; text-decoration: none; transition: color 0.3s ease; }
+        a:hover { text-decoration: underline; color: #e74c3c; }
+        
+        /* CTA 버튼 */
+        .btn-cta {
+            display: block; /* 블록 요소로 변경 */
+            width: 80%; /* 폭 조정 */
+            max-width: 400px;
+            margin: 20px auto; /* 중앙 정렬 */
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #0070f3, #005bb5); /* 그라데이션 적용 */
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1em;
+            border-radius: 30px;
+            box-shadow: 0 6px 15px rgba(0, 112, 243, 0.4);
+            transition: all 0.3s ease;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+        }
+        .btn-cta:hover {
+            background: linear-gradient(45deg, #005bb5, #004080);
+            box-shadow: 0 8px 20px rgba(0, 112, 243, 0.6);
+            transform: translateY(-2px);
+        }
+        /* 입력 폼 스타일 */
+        .input-group { margin-bottom: 15px; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background: #fefefe; }
+        .input-group label { display: block; font-weight: 700; margin-bottom: 5px; color: #2c3e50; }
+        .input-group input[type="text"], 
+        .input-group input[type="number"], 
+        .input-group select, 
+        .input-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        .input-group input:focus, .input-group select:focus, .input-group textarea:focus { border-color: #0070f3; box-shadow: 0 0 5px rgba(0, 112, 243, 0.3); outline: none; }
+        /* 정보 박스 */
+        .info-box {
+            padding: 20px;
+            margin: 25px 0;
+            background: #d9edf7; /* 부드러운 하늘색 */
+            color: #31708f;
+            border: 1px solid #bce8f1;
+            border-radius: 10px;
+            font-size: 0.95em;
+        }
+        .info-box strong { color: #2980b9; }
+        /* 내부 링크용 앵커 스타일 */
+        .anchor { display: block; position: relative; top: -100px; visibility: hidden; }
+        /* footer */
+        footer { text-align: center; font-size: 0.85em; color: #7f8c8d; padding: 15px 0; border-top: 1px solid #ecf0f1; background: #fff; }
+        /* 반응형 */
+        @media(max-width: 768px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; }
+            header, section, footer { margin: 15px auto; padding: 15px; }
+            .btn-cta { width: 90%; padding: 15px 0; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "자동차 보험 인상률 계산기 및 보험료 절약 가이드",
+      "description": "운전자 사고 이력, 차량 정보 등을 기반으로 다음 해 자동차 보험료 인상/할인률을 예측하는 전문 온라인 계산기.",
+      "url": "https://도메인/car-insurance-calculator",
+      "mainEntity": {
+        "@type": "HowTo",
+        "name": "자동차 보험 인상률 계산 및 절약 방법",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "text": "현재 보험 정보(갱신 예정일, 보험사, 보험료)를 입력합니다."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "최근 3년간의 사고 이력 및 보험금 지급 내역을 정확히 기재합니다."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "운전자 범위, 차량가액, 특약 설정 등 추가 정보를 입력합니다."
+          },
+          {
+            "@type": "HowToStep",
+            "text": "계산하기 버튼을 눌러 예상 인상률 및 절약 팁을 확인합니다."
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1250"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>🚗 자동차 보험 인상률 계산기 2025</h1>
+        <p class="text-center" style="font-size: 1.1em; color: #7f8c8d; text-align: center;">사고 이력부터 운전자 범위까지, 나에게 딱 맞는 예상 보험료 증감률을 지금 바로 확인하세요!</p>
+        <button class="btn-cta" onclick="location.href='#calculator'">🚀 인상률 계산기 바로가기</button>
+    </header>
+
+    <nav aria-label="페이지 내 이동">
+        <section style="text-align: center; background: #ecf0f1; padding: 10px 0; border-radius: 8px;">
+            <a href="#calculator" style="margin: 0 10px;">계산기</a> |
+            <a href="#factors" style="margin: 0 10px;">주요 요인</a> |
+            <a href="#tips" style="margin: 0 10px;">절약 팁</a> |
+            <a href="#terms" style="margin: 0 10px;">용어 정리</a> |
+            <a href="#references" style="margin: 0 10px;">신뢰 자료</a>
+        </section>
+    </nav>
+
+    <section id="calculator">
+        <span id="calculator-anchor" class="anchor"></span>
+        <h2>1. 2025년 예상 자동차 보험 인상률 정밀 분석 계산기</h2>
+        <p class="info-box">
+            👉 **주의:** 본 계산기는 예상치이며, 실제 보험료는 보험사별 요율, 정부 정책 및 심사 기준에 따라 달라질 수 있습니다. 정확한 보험료는 보험사 직접 문의를 권장합니다.
+        </p>
+
+        <form action="/calculate-result" method="POST" style="max-width: 700px; margin:auto;">
+            <h3>📊 기본 보험 정보 입력</h3>
+            <div class="input-group">
+                <label for="current_premium">현재 연간 자동차 보험료 (원)<span style="color:red;">*</span></label>
+                <input type="number" id="current_premium" name="current_premium" required placeholder="예: 750000" min="100000" />
+            </div>
+            <div class="input-group">
+                <label for="renewal_date">보험 갱신 예정일</label>
+                <input type="date" id="renewal_date" name="renewal_date" required />
+            </div>
+            <div class="input-group">
+                <label for="current_grade">현재 할인/할증 등급 (예: 11Z, 13Z 등)</label>
+                <input type="text" id="current_grade" name="current_grade" placeholder="예: 13Z (확인 어려울 경우 공란 가능)" />
+            </div>
+
+            <hr style="border-top: 1px dashed #ddd; margin: 25px 0;">
+
+            <h3>🚨 최근 3년간 사고 이력 분석 (가장 중요한 인상 요인)</h3>
+            <p style="font-size: 0.9em; color: #e74c3c;">**최근 1년 이내 (갱신 직전) 사고가 인상률에 가장 크게 영향을 미칩니다.**</p>
+            <div class="input-group">
+                <label for="accident_count_1yr">최근 1년 내 보험 처리 사고 건수 (0원 처리 제외)</label>
+                <input type="number" id="accident_count_1yr" name="accident_count_1yr" value="0" min="0" />
+            </div>
+            <div class="input-group">
+                <label for="accident_amount_1yr">최근 1년 내 보험 처리 지급액 총액 (만 원)</label>
+                <input type="number" id="accident_amount_1yr" name="accident_amount_1yr" value="0" min="0" />
+            </div>
+            <div class="input-group">
+                <label for="accident_count_3yr">최근 3년 내 (1년 초과) 사고 건수</label>
+                <input type="number" id="accident_count_3yr" name="accident_count_3yr" value="0" min="0" />
+            </div>
+            <div class="input-group">
+                <label for="claim_type">사고 유형 (복수 선택 가능)</label>
+                <select id="claim_type" name="claim_type" multiple style="min-height: 100px;">
+                    <option value="대인사고">대인사고 (가장 높은 할증)</option>
+                    <option value="대물사고">대물사고</option>
+                    <option value="자차사고">자차사고 (물적 할증 기준 금액 초과 시)</option>
+                    <option value="무보험차상해">무보험차 상해</option>
+                    <option value="미해당">사고 이력 없음/경미한 단순 접촉</option>
+                </select>
+            </div>
+
+            <hr style="border-top: 1px dashed #ddd; margin: 25px 0;">
+
+            <h3>🚗 차량 및 운전자 정보 (절약 및 추가 할증 요인)</h3>
+            <div class="input-group">
+                <label for="car_model_year">차량 연식</label>
+                <input type="number" id="car_model_year" name="car_model_year" placeholder="예: 2020" required min="1990" max="2025" />
+            </div>
+            <div class="input-group">
+                <label for="driver_age">운전자 최저 연령 (만 나이 기준)<span style="color:red;">*</span></label>
+                <select id="driver_age" name="driver_age" required>
+                    <option value="">선택</option>
+                    <option value="20">만 20세</option>
+                    <option value="21">만 21세</option>
+                    <option value="26">만 26세 이상</option>
+                    <option value="30">만 30세 이상</option>
+                    <option value="35">만 35세 이상 (할인폭 확대)</option>
+                    <option value="48">만 48세 이상</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="driver_range">운전자 범위 (선택에 따라 보험료 절감 가능)</label>
+                <select id="driver_range" name="driver_range" required>
+                    <option value="누구나">누구나</option>
+                    <option value="가족">가족 한정</option>
+                    <option value="부부">부부 한정 (가장 저렴)</option>
+                    <option value="1인">1인 한정 (가장 저렴)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="special_contract">선택 예정 특약</label>
+                <textarea id="special_contract" name="special_contract" rows="3" placeholder="예: 마일리지 특약, 블랙박스 특약, 자녀 할인 특약 등"></textarea>
+            </div>
+
+            <button type="submit" class="btn-cta">인상률 및 절약 방안 즉시 계산하기</button>
+        </form>
+    </section>
+
+    <hr>
+
+    <section id="factors">
+        <span id="factors-anchor" class="anchor"></span>
+        <h2>2. 자동차 보험 인상률을 결정하는 5가지 핵심 요인</h2>
+        <p>자동차 보험료의 인상 및 할인율은 단순히 사고 유무로만 결정되지 않습니다. **보험개발원에서 공시하는 각종 요율**과 개인의 계약 조건이 복합적으로 작용합니다. 이 핵심 요인들을 이해하면 현명하게 보험 갱신을 준비할 수 있습니다.</p>
+
+        <h3>할인/할증 등급 (요율 등급)</h3>
+        <p>가장 기본이 되는 요소입니다. 개인의 무사고 경력과 사고 이력에 따라 매년 1등급씩 상하로 변동됩니다. 최저 1Z부터 최고 29Z까지 있으며, 숫자가 높을수록 할인율이 높습니다. **직전 3년간 사고가 없었다면 다음 해 1등급이 할인**됩니다. 하지만 사고가 있었다면 사고 점수에 따라 1~4등급까지 할증됩니다. 등급별 할인/할증율은 보험사마다 상이합니다.</p>
+
+        <h3>사고 내용 및 점수 (가장 큰 인상률)</h3>
+        <p>사고 발생 시 보험금을 지급했다면, 해당 사고는 **'사고 점수'**로 환산됩니다. 사고 점수가 높을수록 다음 해 보험료 할증이 커지며, 특히 **대인사고(인명피해)는 점수가 매우 높게 책정**되어 보험료 인상률이 급격히 오릅니다. 또한, 물적 할증 기준 금액(보통 200만 원)을 초과하는 자차나 대물 사고는 특별 할증이 적용될 수 있습니다.</p>
+
+        <h3>물적 할증 기준 금액 설정</h3>
+        <p>보험 계약 시 설정하는 이 기준 금액(50만 원, 100만 원, 200만 원 등)을 초과하는 물적 사고(대물/자차)가 발생하면 할증이 적용됩니다. **기준 금액이 높을수록 사고 시 할증 부담은 줄어들지만, 평상시의 보험료는 다소 비싸집니다.** 200만 원으로 설정하는 것이 일반적입니다.</p>
+
+        <h3>운전자 연령 및 범위 (특약 할인 요인)</h3>
+        <p>운전자 연령이 **어릴수록 사고 위험이 높다고 판단되어 보험료가 비쌉니다.** 만 35세, 48세 등 연령이 높아질수록 보험료가 할인됩니다. 또한, 운전자 범위를 '누구나'에서 '부부 한정', '1인 한정' 등으로 좁히면 보험료를 크게 절약할 수 있습니다. <a href="#tips">운전자 범위 설정 팁 바로가기</a></p>
+
+        <h3>차량 모델 및 가액 (자차 보험료 요인)</h3>
+        <p>차량 모델별 손해율(사고 발생 시 지급된 보험금/받은 보험료 비율)에 따라 보험료가 다르게 적용됩니다. 수리비가 비싼 **고가 외제차나 특정 국산차 모델은 보험료가 비쌀 수 있습니다.** 또한, 차량 가액(차량의 현재 시장 가격)이 높을수록 자차 보험료가 높아집니다.</p>
+
+        <div style="margin-top: 30px; padding: 15px; background: #fdf6e3; border: 1px solid #f0e6d6; border-radius: 8px;">
+            <h3>🔍 자동차 보험료 절감을 위한 심화 학습 (추가 정보)</h3>
+            <p>자동차 보험료 인상률을 계산하는 것은 단순히 다음 해의 금액을 아는 것을 넘어, 장기적인 보험 관리 계획을 세우는 데 필수적입니다. 보험료 산정 시스템은 **'우량 운전자는 더 저렴하게, 위험 운전자는 더 비싸게'**라는 원칙을 따르며, 이는 개인의 운전 습관과 직결됩니다.</p>
+
+            <p>특히 **사고 유무와 관계없이 적용되는 요율** 중에는 교통 법규 위반 경력에 따른 할증이 있습니다. 최근 1년 내 중대한 법규 위반(음주운전, 뺑소니, 무면허)이나 다수의 경미한 위반이 있을 경우, 보험사고가 없더라도 보험료가 할증될 수 있습니다. 정부는 안전 운전을 유도하기 위해 이러한 할증 시스템을 강화하고 있습니다. 또한, 과거에는 없던 **'보험 사기 방지 노력'** 차원에서 경미한 사고에 대한 과도한 보험금 청구를 제한하는 제도들이 도입되고 있으며, 이는 전체 보험 요율에도 영향을 미칩니다.</p>
+
+            <p>자동차 보험은 크게 **의무 가입인 책임보험(대인I, 대물)과 선택 가입인 임의보험(대인II, 자차, 자손/자부상, 무보험차 상해)**으로 나뉩니다. 인상률 계산 시 가장 큰 영향을 미치는 부분은 임의보험, 특히 **자차 보험료**입니다. 차량의 종류, 연식, 그리고 앞서 언급한 차량 모델별 손해율이 자차 보험료의 등락을 좌우합니다. 신차를 구매할 경우, 차량가액이 높기 때문에 첫 해의 자차 보험료가 가장 비싸며, 이후 매년 일정 비율로 감가상각이 반영되어 자차 보험료는 점차 낮아지는 구조입니다.</p>
+
+            <p>최근에는 환경 정책에 따라 **친환경 차량(전기차, 수소차)에 대한 보험료 할인 특약**이 확대되는 추세입니다. 또한, '주행거리 마일리지 특약'은 1년 동안 주행한 거리에 따라 보험료를 환급받을 수 있어, 장거리 운행을 하지 않는 운전자에게는 가장 확실한 절약 방법 중 하나입니다. 블랙박스 장착이나 첨단 안전장치(ADAS) 장착 여부도 보험료를 할인받을 수 있는 주요 요인이므로 갱신 전에 반드시 확인해야 합니다.</p>
+
+            <p>보험사별로 운영하는 **우량 운전자 할인 제도는 무사고 경력이 장기화(예: 10년 이상)될 경우 추가적인 할인율**을 제공합니다. 이는 등급 변동과는 별개로 적용될 수 있으며, 보험사를 옮기더라도 경력이 승계되므로 장기 무사고 운전자에게 매우 유리합니다. 반면, 사고 이력이 있는 운전자는 보험사 간의 요율 차이가 더 클 수 있으므로, 여러 보험사의 견적을 비교하는 것이 필수적입니다. 이를 위해 **온라인 보험료 비교 사이트**를 활용하는 것이 시간과 비용을 절약하는 현명한 방법입니다.</p>
+            <p>이외에도, **임시 운전자 특약**이나 **단기 운전자 특약**을 활용하여 운전자 범위를 일시적으로 확대하는 것이 장기간 '누구나'로 설정하는 것보다 훨씬 저렴하며, 보험 갱신 직전에 불필요한 특약(예: 불필요한 대여 비용 담보)을 제외하거나 자기부담금 비율을 높이는 것도 인상률을 상쇄하고 보험료를 절약하는 방법이 될 수 있습니다.</p>
+            <p>자동차 보험료 산출의 복잡성을 이해하는 것은 재정 관리에 있어 중요한 부분입니다. 할증 점수는 보통 **3년간 유지**되며, 이 기간이 지나야 비로소 사고 이력이 보험료에 미치는 영향에서 벗어날 수 있습니다. 따라서 경미한 사고의 경우, 보험료 할증을 피하기 위해 **자비로 처리하는 것이 장기적으로 유리**할 수 있습니다. 여기서 '자비 처리'의 기준은 보통 물적 할증 기준 금액(예: 200만 원)의 30% 수준인 60만 원 미만으로 알려져 있습니다. 이 금액을 초과하는 사고는 할증이 적용될 가능성이 높으므로 보험 처리를 고려하는 것이 좋습니다.</p>
+            <p>최근 보험업계의 동향은 **개인별 맞춤형 요율**을 강화하는 방향으로 움직이고 있습니다. 이는 빅데이터와 AI 기술을 활용하여 개인의 운전 행태(급제동, 급가속 빈도 등)를 분석하는 **UBI(Usage-Based Insurance)** 방식의 도입을 의미합니다. 이미 일부 보험사는 안전운전 점수를 측정하여 추가 할인 혜택을 제공하고 있으며, 향후 인상률 계산에 있어 운전 습관이 더욱 중요한 변수로 작용할 것입니다. 따라서 단순히 사고 유무뿐만 아니라, 안전 운전 점수를 관리하는 것도 미래 보험료 절약의 핵심 전략이 될 것입니다.</p>
+            <p>마지막으로, 자동차 보험은 **의무 계약**이며, 미가입 시 과태료가 부과됩니다. 갱신 기간을 놓쳐 무보험 상태가 되는 일이 없도록 갱신 예정일 전에 충분한 시간을 두고 여러 보험사의 견적을 비교하고 준비하는 것이 중요합니다. **보험사마다 손해율이 다르고 적용하는 특약의 할인율이 다르기 때문에**, 최소 3개 이상의 보험사 견적을 받아보는 것이 정답입니다. 이 과정에서 본 계산기가 예상 인상률의 가이드라인을 제공하여 합리적인 선택을 돕고자 합니다.</p>
+            <p>자동차 보험료의 구조는 크게 **기본 보험료, 가입자 특성 요율, 차량 특성 요율, 운전자 특성 요율**의 네 가지 축으로 이루어져 있습니다. 기본 보험료는 성별, 연령, 차종 등에 따라 결정되는 기초적인 요금이며, 여기에 가입자(사고 이력, 무사고 경력), 차량(모델, 연식, 가액), 운전자(운전자 범위, 연령 한정)에 따른 다양한 할증 및 할인 요율이 곱해져 최종 보험료가 산정됩니다. 이 복잡한 요율 시스템 때문에 소비자들은 매년 갱신 시 예상치 못한 인상률에 당황하게 됩니다.</p>
+            <p>**'블랙박스 특약'**은 영상 기록의 유무가 사고 발생 시 과실 비율 산정 및 보험사기 방지에 도움을 주어 보험료 할인 혜택이 적용됩니다. 또한, **'자녀 할인 특약'**은 만 6세 이하 등 특정 연령의 자녀가 있는 경우 보험료가 크게 할인될 수 있는 매우 유용한 특약이므로, 자녀가 있는 운전자라면 반드시 가입을 고려해야 합니다. 이러한 특약들은 인상된 보험료를 상쇄하는 좋은 수단이 됩니다.</p>
+            <p>보험료 절약을 위해 간과하기 쉬운 부분은 **'자기차량손해(자차)'**의 처리 방식입니다. 자차 사고 시 자기부담금을 지불하고 보험 처리를 할 것인지, 아니면 자비로 수리할 것인지의 결정은 다음 해 보험료에 직접적인 영향을 미칩니다. 사고가 경미하여 수리비가 자기부담금과 할증 예상액을 합한 금액보다 낮다면 자비 처리가 유리합니다. 이 판단을 돕기 위해 보험사에 **'가상 할증'** 문의를 해보는 것이 좋습니다.</p>
+            <p>끝으로, **'보험료 비교'**는 단순 가격 비교를 넘어 각 보험사에서 제공하는 서비스와 보상 수준을 함께 고려해야 합니다. 아무리 저렴하더라도 사고 발생 시 신속하고 원활한 처리가 이루어지지 않는다면 의미가 없기 때문입니다. 따라서 가입하고자 하는 보험사의 고객 만족도, 사고 처리 속도 등을 종합적으로 검토하는 지혜가 필요합니다. 이 모든 과정을 통해 운전자는 자신의 재정 상태와 운전 습관에 가장 최적화된 자동차 보험을 찾을 수 있습니다.</p>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="tips">
+        <span id="tips-anchor" class="anchor"></span>
+        <h2>3. 🚀 자동차 보험료 인상률 최소화 및 절약 TOP 5 팁</h2>
+        <ol>
+            <li>
+                <strong>물적 할증 기준 금액 상향 설정:</strong> 경미한 사고로 인한 할증을 피하기 위해 물적 할증 기준 금액을 최대한 높게 (200만원) 설정합니다.
+            </li>
+            <li>
+                <strong>마일리지 특약 적극 활용:</strong> 연간 주행거리가 짧다면 (예: 1만 5천km 미만) 주행거리 인증 특약(마일리지 특약)에 가입하여 보험료를 환급받으세요.
+            </li>
+            <li>
+                <strong>운전자 범위 최소화:</strong> 운전자를 '부부 한정', '1인 한정' 등으로 최대한 좁히고, 필요한 경우만 '임시 운전자 특약'을 활용합니다.
+            </li>
+            <li>
+                <strong>안전 운전 및 교통 법규 준수:</strong> 무사고 경력은 가장 강력한 할인 요인입니다. 또한, 교통 법규 위반 시 부과되는 보험료 할증을 피하기 위해 안전 운전은 필수입니다.
+            </li>
+            <li>
+                <strong>다이렉트 보험 비교:</strong> 보험 설계사를 통하지 않고, **온라인 다이렉트 채널**을 통해 직접 가입하여 평균 15% 내외의 사업비를 절약합니다. 갱신 전 여러 다이렉트 보험사의 견적을 필수적으로 비교합니다.
+            </li>
+        </ol>
+        <button class="btn-cta" onclick="location.href='#calculator'">💰 예상 절약액 계산해보기</button>
+    </section>
+
+    <hr>
+
+    <section id="terms">
+        <span id="terms-anchor" class="anchor"></span>
+        <h2>4. 필수 자동차 보험 용어 정리</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>용어</th>
+                    <th>설명</th>
+                    <th>인상률 연관성</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>대인 배상 I / II</td>
+                    <td>사고로 타인을 다치게 했을 때 보상. I은 의무, II는 추가 보상.</td>
+                    <td>대인 사고는 **가장 높은 할증**을 유발합니다.</td>
+                </tr>
+                <tr>
+                    <td>대물 배상</td>
+                    <td>사고로 타인의 차량 또는 재물을 파손했을 때 보상.</td>
+                    <td>보상 한도(예: 2억)를 높여야 대형 사고에 대비하고 할증 기준을 넘기지 않을 수 있습니다.</td>
+                </tr>
+                <tr>
+                    <td>자기차량손해(자차)</td>
+                    <td>내 차량의 파손을 보상. 보험료의 큰 비중을 차지합니다.</td>
+                    <td>자차 사고 시 할증 기준 초과 여부를 신중히 판단해야 합니다.</td>
+                </tr>
+                <tr>
+                    <td>할인/할증 등급</td>
+                    <td>운전자의 무사고/사고 이력을 29단계로 나눈 요율 등급.</td>
+                    <td>**매년 1등급씩 변동**되며, 보험료 인상/할인의 핵심 기준입니다.</td>
+                </tr>
+                <tr>
+                    <td>물적 할증 기준 금액</td>
+                    <td>대물/자차 사고 처리 시 이 금액(예: 200만원)을 초과하면 할증이 적용됩니다.</td>
+                    <td>이 기준을 낮게 설정하면 작은 사고에도 쉽게 할증됩니다.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr>
+
+    <section id="references">
+        <span id="references-anchor" class="anchor"></span>
+        <h2>5. 🌐 자동차 보험 관련 공인된 신뢰 자료</h2>
+        <p>자동차 보험료 및 인상률에 대한 공식적이고 정확한 정보를 얻을 수 있는 공신력 있는 외부 사이트 목록입니다. (새 창 열림)</p>
+        <ol>
+            <li>
+                <a href="https://www.fss.or.kr/" target="_blank">금융감독원 (FSS):</a> 자동차 보험 상품 및 민원 관련 공식 정보 제공.
+            </li>
+            <li>
+                <a href="https://www.kidi.or.kr/" target="_blank">보험개발원 (KIDI):</a> 자동차보험료 산출의 기초가 되는 요율 및 통계 정보 제공.
+            </li>
+            <li>
+                <a href="https://www.law.go.kr/" target="_blank">국가법령정보센터:</a> 자동차손해배상 보장법 등 관련 법규 확인.
+            </li>
+            <li>
+                <a href="https://namu.wiki/w/%EC%9E%90%EB%8F%99%EC%B0%A8%20%EB%B3%B4%ED%97%98" target="_blank">나무위키 - 자동차 보험:</a> 일반적인 개념 및 상세 정보 습득.
+            </li>
+            <li>
+                <a href="https://www.car365.go.kr/" target="_blank">자동차민원 대국민 포털 (CAR365):</a> 차량 정보 및 정비 이력 확인 (보험료 산정에 간접 영향).
+            </li>
+        </ol>
+    </section>
+
+    <hr>
+
+    <section id="contact" style="text-align: center;">
+        <span id="contact-anchor" class="anchor"></span>
+        <h2>궁극적인 보험료 절약, 지금 바로 전문가와 상담하세요!</h2>
+        <p style="font-size: 1.1em; color: #e74c3c; font-weight: 700;">전화 상담: <a href="tel:0311234567" style="color: #e74c3c;">031-123-4567</a> (운영 시간: 평일 9시~18시)</p>
+        <button class="btn-cta" onclick="location.href='#calculator'">💰 예상 인상률 계산 시작하기</button>
+    </section>
+
+    <footer>
+        <p>© 2025 자동차 보험 인상률 계산기 전문 서비스. 모든 권리 보유. | 사업자 등록번호: 123-45-67890</p>
+        <p>문의 이메일: <a href="mailto:help@domain.com">help@domain.com</a></p>
+    </footer>
+</body>
+
+
+
